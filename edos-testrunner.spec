@@ -13,6 +13,7 @@ URL:		http://www.edos-project.org
 License:	GPL
 Group:		Development/Python
 Source0:	http://www.edos-project.org/releases/%{name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Packager:       Francois Dechelle <fdechelle@mandriva.com>
 %py_requires -d
 Requires:	python-pyxml
