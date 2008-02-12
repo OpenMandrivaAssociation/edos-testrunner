@@ -21,7 +21,8 @@ Requires:	python-rpm
 Requires:	zip
 
 %description
-A test runner that can run any test suite and make reports to an HTTP server, developped by the EDOS project.
+A test runner that can run any test suite and make reports to an HTTP server,
+developped by the EDOS project.
 
 %prep
 %setup -q -n %{name}-%{version}
