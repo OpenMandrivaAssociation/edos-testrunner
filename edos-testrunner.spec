@@ -1,6 +1,6 @@
 %define name edos-testrunner
 %define version 1.0.4beta
-%define release %mkrel 1
+%define release %mkrel 3
 
 %define _unpackaged_files_terminate_build	0
 %define _missing_doc_files_terminate_build	0
