@@ -1,6 +1,6 @@
 %define name edos-testrunner
 %define version 1.0.4beta
-%define release %mkrel 5
+%define release %mkrel 6
 
 %define _unpackaged_files_terminate_build	0
 %define _missing_doc_files_terminate_build	0
@@ -14,8 +14,7 @@ License:	GPL
 Group:		Development/Python
 Source0:	http://www.edos-project.org/releases/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Packager:       Francois Dechelle <fdechelle@mandriva.com>
-%py_requires -d
+BuildRequires:	python
 Requires:	python-pyxml
 Requires:	python-rpm
 Requires:	zip
@@ -33,8 +32,6 @@ python setup.py build
 %install
 rm -rf %{buildroot}
 python setup.py install --prefix=%{buildroot} --install-scripts=%{buildroot}/usr/bin --install-lib=%{buildroot}/%python_sitelib
-# Remove unpackage egg-info file
-rm -rf %{buildroot}/%python_sitelib/edos_testrunner*.egg-info
 
 %clean
 rm -rf %{buildroot}
@@ -43,22 +40,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc README config/edos-testrunner.cfg.sample tests/test-basic.xml
 %python_sitelib/edostestrunner/*.py
-%python_sitelib/edostestrunner/*.pyc
 %_bindir/edos-runtest
-
-%changelog
-* Thu May 10 2007 Francois Dechelle <fdechelle@mandriva.com>
-- changed Requires and BuildRequires to use %py_requires -d
-
-* Mon May 07 2007 Francois Dechelle <fdechelle@mandriva.com>
-- added removal of unpackaged egg-info file
-
-* Wed Apr 04 2007 Francois Dechelle <fdechelle@mandriva.com>
-- fixed python version
-
-* Wed Jan 10 2007 Francois Dechelle <fdechelle@mandriva.com>
-- moved to setup.py
-
-* Tue Oct 24 2006 Francois Dechelle <fdechelle@mandriva.com>
-- initial package
-
