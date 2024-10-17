@@ -6,7 +6,7 @@ Version:	1.0.4
 Release:	0.%{beta}.1
 License:	GPLv2+
 Group:		Development/Python
-Url:		http://www.edos-project.org
+Url:		https://www.edos-project.org
 Source0:	http://www.edos-project.org/releases/%{name}-%{version}%{beta}.tar.bz2
 BuildRequires:	python
 Requires:	python-pyxml
